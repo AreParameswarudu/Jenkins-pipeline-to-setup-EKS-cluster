@@ -3,6 +3,14 @@ A simple yet dynamic Jenkins pipeline to setup a EKS cluster on AWS with terrafo
 
 
 ## Setup a ec2 instance ( UBUNTU ) and install Jenkins and Terraform.
+Create an IAM role with, 
+  Trusted entity = EC2  
+  Permission = Admin  
+
+Launch an ec2 instance and attach this role to the instance.  
+  
+NOTE: The cluster need permission to launch instances, assign roles, node gorup and hence needs respective permission, So gave an admin permission. We can fine grade the permission upto what is necessary if requied.  
+  
 Jenkins, 
 ```
 vi jenkins.sh
