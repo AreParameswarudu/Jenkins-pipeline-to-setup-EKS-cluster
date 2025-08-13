@@ -47,21 +47,22 @@ sudo apt-get install unzip -y
 unzip awscliv2.zip
 sudo ./aws/install
 ```
-
+  
 Run the script to setup.  
-Login to Jenkins UI.  
+Login to Jenkins UI.    
+  
 Install terraform plugin and restart, 
 `manage Jenkins --> plugins ---> available plugins ---> terraform.`  
 
 Setup the terraform in the tools section of Jenkins,
 `Manage Jenkins –> Tools ---> Terraform.`  
-
+  
 Set the values,   
 `Name = Terraform`  
 `Uncheck the install automatically`,  
 `intall dir = /usr/bin`  
 
-Note: the install directlry is the directory where our terraform was installed in the ec2 instance, we can verify using the command `which terraform` on the ec2 instance.
+Note: the install directory is the directory where our terraform was installed in the ec2 instance, we can verify using the command `which terraform` on the ec2 instance.
 
 
 ## Jenkins pipeline
@@ -84,7 +85,7 @@ pipeline{
     stages {
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/ReyazShaik/devsecops-2048.git'
+                git branch: 'main', url: 'https://github.com/AreParameswarudu/Jenkins-pipeline-to-setup-EKS-cluster'
             }
         }
         stage('Terraform version'){
